@@ -7,8 +7,10 @@
         public function __CONSTRUCT(){
             $url = $this->parseUrl();
             
-            if( file_exists('../app/controllers/' . $url[0] . '.php')){
-                $this->controller = $url[0];
+            if(!empty($url)){    
+                if( file_exists('../app/controllers/' . $url[0] . '.php')){
+                    $this->controller = $url[0];
+                }
             }
             
             require '../app/controllers/' . $this->controller . '.php';
