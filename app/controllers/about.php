@@ -1,7 +1,6 @@
 <?php
-    class about{
+    class About{
         public function index(){
-            echo 'about/index';
-            exit;
+
         }
     }

@@ -1,7 +1,7 @@
 <?php
-    class home{
+    class Home extends Controller{
         public function index(){
-            echo 'home/index';
-            exit;
+            $data = ['nama-user' => "Fany"];
+            $this->view('home/index', $data);
         }
     }
