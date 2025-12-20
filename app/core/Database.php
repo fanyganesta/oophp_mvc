@@ -3,13 +3,14 @@
         protected static $instance = [], $pdo;
 
         public function __CONSTRUCT(){
-            $dsn = "mysql:host=localhost;dbname=oophp_mvc";
+            $dsn = "mysql:host=".DB_HOST.";dbname=".DB_NAME;
             $option = [
-                \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
+                \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
+                \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION
             ];
 
             try{
-                self::$pdo = new \PDO($dsn, 'root', '', $option);
+                self::$pdo = new \PDO($dsn, DB_USERNAME, DB_PASSWORD, $option);
             }catch(\PDOException $e){
                 echo $e;
             }

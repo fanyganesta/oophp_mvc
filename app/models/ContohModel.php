@@ -12,4 +12,12 @@
             $rows = self::$db->getAll($sql);
             return $rows;
         }
+
+        public function getByID($ID){
+            $table = self::$table;
+            $stmt = "SELECT * FROM $table WHERE ID = ?";
+            $params = [$ID];
+            $row = self::$db->getOne($stmt, $params);
+            return $row;
+        }
     }

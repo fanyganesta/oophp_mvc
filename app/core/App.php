@@ -12,6 +12,7 @@
                     $this->controller = $url[0];
                 }
             }
+            unset($url[0]);
             
             require '../app/controllers/' . $this->controller . '.php';
             $class = $this->controller;
@@ -19,8 +20,8 @@
 
             if( isset($url[1]) && method_exists($obj, $url[1] )){
                 $this->method = $url[1];
-                unset($url[1]);
             }
+            unset($url[1]);
 
             if( !empty($url) ){
                 $this->params = array_values($url);
