@@ -40,4 +40,10 @@
             $rows = $result->fetchAll();
             return $rows;
         }
+
+        public static function countRows($sql, $params = []){
+            $result = self::run($sql, $params);
+            $count = $result->rowCount();
+            return $count;
+        }
     }

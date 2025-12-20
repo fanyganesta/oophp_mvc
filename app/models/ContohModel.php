@@ -20,4 +20,22 @@
             $row = self::$db->getOne($stmt, $params);
             return $row;
         }
+
+        public function insert($datas){
+            $nama = $datas['nama'];
+            $divisi = $datas['divisi'];
+            $table = self::$table;
+            $stmt = "INSERT INTO $table (nama, divisi) VALUES (? , ?)";
+            $params = [$nama, $divisi];
+            $result = self::$db->countRows($stmt, $params);
+            return $result;
+        }
+
+        public function hapus($ID){
+            $table = self::$table;
+            $stmt = "DELETE FROM $table WHERE ID = ?";
+            $params = [$ID];
+            $result = self::$db->countRows($stmt, $params);
+            return $result;
+        }
     }
