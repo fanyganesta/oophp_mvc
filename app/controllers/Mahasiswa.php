@@ -6,7 +6,8 @@
         }
 
         public function getAll(){
-            $this->view('mahasiswa/all-data');
+            $datas = $this->model('MahasiswaModel')->getAll();
+            $this->view('mahasiswa/all-data','All Data', $datas);
         }
 
         public function seeder(){
@@ -19,4 +20,6 @@
                 return redirect('/mahasiswa/getAll');
             }
         }
+
+
     }

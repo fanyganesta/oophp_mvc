@@ -6,4 +6,3 @@
     require 'core/Flasher.php';
     require 'helpers/Redirect.php';
     require 'seeders/MahasiswaSeeder.php';
-    require 'models/MahasiswaModel.php';
