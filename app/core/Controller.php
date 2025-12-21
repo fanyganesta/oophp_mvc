@@ -1,7 +1,6 @@
 <?php
     class Controller {
-        public function view($path, $params = []){
-            $title = $params[0];
+        public function view($path, $title = '', $params = []){
             $datas = $params[1] ?? null;
             require '../app/views/template/header.php';
             require '../app/views/' . $path . '.php';
