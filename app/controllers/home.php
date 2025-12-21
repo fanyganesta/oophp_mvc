@@ -15,7 +15,12 @@
         public function insert(){
             $model = $this->model($this->model)->insert($_POST);
             if($model > 0){
+                Flasher::setFlash('berhasil', 'ditambahkan', 'success');
                 header('Location: ' . BASE_URL . '/home');
+                exit;
+            }else{
+                Flasher::setflash('gagal', 'ditambahkan', 'danger');
+                header("Location: ".BASE_URL."/home");
                 exit;
             }
         }
@@ -23,7 +28,12 @@
         public function hapus($ID){
             $model = $this->model($this->model)->hapus($ID);
             if($model > 0){
+                Flasher::setFlash('berhasil', 'dihapus', 'success');
                 header('Location: ' . BASE_URL . '/home');
+                exit;
+            }else{
+                Flasher::setFlash('gagal', 'dihapus', 'danger');
+                header("Location: ".BASE_URL."/home");
                 exit;
             }
         }

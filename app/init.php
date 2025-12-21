@@ -3,3 +3,4 @@
     require 'core/Controller.php';
     require 'core/Config.php';
     require 'core/Database.php';
+    require 'core/Flasher.php';

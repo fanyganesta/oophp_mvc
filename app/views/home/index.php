@@ -1,3 +1,9 @@
+<div class="row">
+    <div class="col-lg-3">
+        <?php Flasher::flash() ?>
+    </div>
+</div>
+
 
 <div class="jumbotron px-4">
     <h1 class="display-4">Selamat Datang!</h1>
