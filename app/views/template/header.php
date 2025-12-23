@@ -14,10 +14,10 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>">Home</a>
+            <a class="nav-link" aria-current="page" href="<?= BASE_URL ?>">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= BASE_URL ?>/about">About</a>
+            <a class="nav-link" href="<?= BASE_URL ?>/mahasiswa/getAll">List Mahasiswa</a>
           </li>
         </ul>
       </div>
@@ -26,7 +26,7 @@
     <div class="col-3 float-right">
       <form action="" method="GET">
         <div class="input-group">
-          <input type="text" name="cari" class="form-control" placeholder="Nama/Email/Tanggal Lahir" aria-label="cari" aria-describedby="cariMahasiswa" value="<?= $_GET['cari'] ?? null ?>">
+          <input type="text" name="cari" class="form-control" placeholder="Nama / Email / Tanggal Lahir" aria-label="cari" aria-describedby="cariMahasiswa" value="<?= $_GET['cari'] ?? null ?>">
           <button class="btn btn-primary" type="submit" id="cariMahasiswa">Cari Mahasiswa</button>
         </div>
       </form>
