@@ -1,5 +1,5 @@
 <?php
-    class MahasiswaSeeder{
+    class MahasiswaSeeder extends Controller{
         protected $datas;
         
         protected static function setDatas(){
@@ -13,14 +13,20 @@
                 $datas .= "('', 'Nama Mahasiswa Ke-$i', 'mahasiswake-$i@email.com', '2000-10-$i')$delimit"; 
             }
 
-            return "INSERT INTO mahasiswas VALUES " . $datas;
+            return $datas;
         }
 
-        public static function seeder(){
-            MahasiswaModel::checkTable();
-            $datas = self::setDatas();
-            $result = MahasiswaModel::insertSeeder($datas);
+        public static function getSeeder(){
+            return self::setDatas();
+        }
 
-            return $result;
+        protected static function setTable(){
+            $mahasiswasTable = "(ID INT PRIMARY KEY AUTO_INCREMENT, nama VARCHAR(100), email VARCHAR(100), tanggalLahir date);";
+
+            return $mahasiswasTable;
+        }
+
+        protected static function getTable(){
+            return self::setTable();
         }
     }
